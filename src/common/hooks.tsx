@@ -24,7 +24,7 @@ export const useGetDataBy = (url: string) => {
                     error: 'something went wrong'
                 })
             })
-    },[url])
+    }, [url])
 
 
     return {data, isLoading, error}

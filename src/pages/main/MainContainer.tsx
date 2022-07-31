@@ -6,13 +6,13 @@ const MainContainer:FC = () => {
     const {data, error, isLoading} = useGetDataBy('/episodes')
 
     return (
-        <div className="">
+        <>
             {isLoading && <div>Loading ... </div>}
 
             {error && <div>{error} </div>}
 
             {!!data?.length && <Main data={data}/>}
-        </div>
+        </>
   );
 }
 

@@ -4,8 +4,7 @@ import { useGetDataBy } from '../../common/hooks';
 import { useParams } from 'react-router-dom';
 
 const EpisodeContainer:FC = () => {
-
-    let { episode_id } = useParams();
+    const { episode_id } = useParams();
 
     const {data, error, isLoading} = useGetDataBy(`/episodes/${episode_id}`)
 
