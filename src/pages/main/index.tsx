@@ -7,17 +7,32 @@ interface IMain {
 }
 
 const Main:FC<IMain> = ({ data }) => (
-        <div className="">
-            <ul>
-                {data.map(value => (
-                    <li key={value.episode_id}>
-                        <span>{value.title}</span>
-                        <span>{value.air_date}</span>
-                        <a href={`${episode}/${value.episode_id}`}>See episode</a>
-                    </li>
-                ))}
-            </ul>
-        </div>
+    <ul className='flex w-full flex-wrap'>
+        {data.map(value => (
+            <li 
+                className='w-1/6 m-5 p-3 rounded flex flex-col justify-center items-center border border-slate-700'
+                key={value.episode_id}
+            >
+                <span 
+                    className='font-serif text-lg text-center'
+                >
+                    {value.title}
+                </span>
+                <span
+                    className='font-mono text-xs'
+                >
+                    {value.air_date}
+                </span>
+                
+                <a
+                    className='font-sans text-base hover:underline mt-5 transition' 
+                    href={`${episode}/${value.episode_id}`}
+                >
+                    See episode
+                </a>
+            </li>
+        ))}
+    </ul>
 );
 
 export default Main;

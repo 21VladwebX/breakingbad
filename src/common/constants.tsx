@@ -6,12 +6,11 @@ import MainContainer from "../pages/main/MainContainer";
 export const episode = 'episode'
 export const character = 'character'
 
-// move to separate file or rename this one
 export const AppLinks = [{
     link: '/',
     Component: MainContainer,
     label: 'Main',
-    showLink: true
+    showLink: false
 }, {
     link: `${episode}/:episode_id`,
     Component: EpisodeContainer,

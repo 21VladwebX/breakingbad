@@ -8,19 +8,24 @@ interface ICharacterProps {
 
 const Character:FC<ICharacterProps> = ({data}) => {
   return (
-    <div>
-      <span>{data.name}</span>
+    <div className='flex flex-col justify-center items-center'>
+      <img
+        src={data.img}
+        alt="userImage"
+        className='w-1/6'
+      />
 
-      <img src={data.img} alt="userImage" />
+      <span className='font-mono text-lg'>{data.name}</span>
 
-      <time dateTime={data.birthday}> {data.birthday} </time> 
+      <time className='font-serif	text-sm' dateTime={data.birthday}> {data.birthday} </time> 
 
-      <span> {data.nickname} </span>
-      <span>{data.status}</span>
+      <span className='font-sans text-base mt-5'>Nickname: {data.nickname} </span>
+      <span className='font-sans text-base'>Status: {data.status}</span>
 
-      <ul>
+      <span className='font-sans text-base mt-5'>Occupations:</span>
+      <ul className='flex-col justify-center items-center'>
         {data.occupation.map(value  => (
-          <li key={value}>{value}</li>
+          <li key={value} className='before:content-["-"] block '> {value} </li>
         ))}
       </ul>
     </div>

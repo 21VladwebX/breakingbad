@@ -6,28 +6,9 @@ const instance = axios.create({
   });
 
 export const useGetDataBy = (url: string) => {
-    const [{data, isLoading, error}, setState] = useState({data: [], isLoading: false, error: ''}) 
-
-    // if(!url) {
-    //     return {data, isLoading, error}
-    // }    
+    const [{data, isLoading, error}, setState] = useState({data: [], isLoading: false, error: ''})  
     
-    useEffect(() => {
-
-        // if(!url) {
-            // return {
-        //     data: {},
-        //     isLoading: false,
-        //     error: ''
-        // }
-        // }
-
-        setState({
-            data: [],
-            isLoading: false,
-            error: ''
-        })
-        
+    useEffect(() => {        
         instance.get(url)
             .then(({data: responseData}) => {
                 setState({

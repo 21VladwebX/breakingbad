@@ -1,16 +1,15 @@
 import React from 'react';
-import NavLinks from './pages/NavLinks';
-import AppRoutes from './pages/AppRoutes';
+import { Route, Routes } from 'react-router-dom';
+import { AppLinks } from './common/constants';
 
 function App() {
   return (
-    <div className="App">
-      <NavLinks />
-
-      <header className="App-header">  Eposides  </header>
-      
-      <AppRoutes />
-
+    <div className="container mx-auto min-h-screen bg-slate-200">
+      <Routes>
+        {AppLinks.map(({link, Component }) => (
+            <Route path={link} key={link} element={<Component />}  />
+        ))}
+      </Routes> 
     </div>
   );
 }
